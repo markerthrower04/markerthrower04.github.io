@@ -9,13 +9,18 @@ html {
 body {
     color: var(--text);
     background: var(--background);
+        font-family: "Quicksand";
 }
 
 
 h1{
     color: var(--secondary);
 }
-
+h1,
+h2,
+h3 {
+    font-size: "Baloo Bhaijaan 2";
+}
 
 li::marker {
    color: var(--secondary);
