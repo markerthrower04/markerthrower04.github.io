@@ -1,6 +1,6 @@
 html {
     --text: #0a170c;
-    --background: #5cb265;
+    --background: #3b9144;
     --primary: #84ab63;
     --secondary: #512e10;
     --accent: #c5a77a;
@@ -9,17 +9,32 @@ html {
 body {
     color: var(--text);
     background: var(--background);
-        font-family: "Quicksand";
+    font-family: "Quicksand";
+    font-weight: 520;
+    font-size: large;
 }
 
 
 h1{
     color: var(--secondary);
+    font-size: xxx-large;
+    font-weight: 620;
+    font-style: oblique;
+    text-decoration: underline overline #c5a77a;
 }
+
+
 h1,
 h2,
 h3 {
-    font-size: "Baloo Bhaijaan 2";
+    font-family: "Baloo Bhaijaan 2";
+}
+
+h2,
+h3 {
+    text-decoration: underline #c5a77a;
+    font-size: larger;
+    font-weight: 650;
 }
 
 li::marker {
