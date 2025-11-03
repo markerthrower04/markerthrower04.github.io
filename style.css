@@ -1,13 +1,13 @@
 html {
     --text: #0a170c;
-    --background: #3b9144;
+    --background: #3ac048;
     --primary: #84ab63;
-    --secondary: #512e10;
+    --secondary: #2f1600;
     --accent: #c5a77a;
 }
 
 li {
-    border: 1.5px solid #c5a77a;
+    border: 1.5px solid #c5a77a
 }
 
 body {
@@ -64,5 +64,8 @@ img {
 }
 *{
     width:900px;
+}
+* {
+  border: 1px solid rgb(184, 134, 83);
 }
 
