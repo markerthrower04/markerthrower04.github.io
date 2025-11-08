@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+**+-*<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,10 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="balloon"></div>
-    <p>🎈</p>
-   <script>
+     <p id="balloon">🎈</p>
 
-   </script> 
+<script>
+   document.body.style.overflow = 'hidden';
+   let ballonEl = document.getElementById("ballon");
+   let fontsize = 12;
+
+   function keyDownEvent(event){
+    if (event.key == "ArrowUp"){
+      fontsize *= 1.1;
+      ballonEl.style.fontsize = fontsize + "px";  
+      event.preventDefault();
+      if (fontsize >= 50) {
+        ballo0n
+      }
+    }
+   }
+</script>
+   
 </body>
 </html>
