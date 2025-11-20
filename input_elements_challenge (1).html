@@ -65,6 +65,7 @@
     <section id="part3">
         <h2>Part 3: Checkbox and Radio Buttons</h2>
         <label><input type="checkbox" id="subscribeBox" onclick="mysubscribe()"> Subscribe to newsletter</label>
+        <p id="text" style="display:none">Checkbox is CHECKED!</p>
 
         <p>Pick a mode:</p>
         <label><input type="radio" name="mode"  id="Light" value="Light"> Light</label>
@@ -115,8 +116,11 @@
 
  function mysubscribe(){
         let subscribeBox = document.getElementById("subscribeBox");
+        let text = document.getElementById("text");
         if (subscribeBox.checked){
-        alert("You have subscribed to the newsletter!");
+        text.style.display = "block";
+        } else {
+     text.style.display = "none";
         }
     }
 
