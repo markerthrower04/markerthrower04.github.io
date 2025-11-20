@@ -65,7 +65,7 @@
     <section id="part3">
         <h2>Part 3: Checkbox and Radio Buttons</h2>
         <label><input type="checkbox" id="subscribeBox" onclick="mysubscribe()"> Subscribe to newsletter</label>
-        <p id="text" style="display:none">Checkbox is CHECKED!</p>
+        <p id="text" style="display:none">Subscribe box is CHECKED!</p>
 
         <p>Pick a mode:</p>
         <label><input type="radio" name="mode"  id="Light" value="Light"> Light</label>
@@ -74,7 +74,7 @@
 
         <label><input type="radio" name="mode"   id="System" value="System" checked> System</label>
 
-        <button id="btnSubmit">Submit</button>
+        <button id="btnSubmit" onclick="mysubmit()">Submit</button>
         <div class="output" id="modeOutput"></div>
     </section>
     
@@ -88,7 +88,7 @@
         btnGreet.addEventListener("click", () => {
         let name = nameInput.value;
         let age = ageInput.value;
-        greetingOutput.innerText = "Hello Im computer you must be " + name + ", and  you are" + age +" years old correct?"
+        greetingOutput.innerText = "Hello Im computer you must be " + name + ", and  you are " + age +" years old correct?"
             // TODO: Display a message like "Hello NAME, you are AGE years old!"
             // Challenge: If age < 13, show "You're just a kid!" instead.
             if (age < 13) {
@@ -125,19 +125,20 @@
     }
 
 
-       btnSubmit.addEventListener("click", () => {
-           if (boolean == true){
+         function mysubmit(){
                if (document.getElementById("Light").checked){
-                   modeOutput.innerText += "and you picked Light mode";
+                   modeOutput.innerText = " you picked Light mode";
                } 
                 if (document.getElementById("Dark").checked){
-                   modeOutput.innerText += "and you picked Dark mode";
+                   modeOutput.innerText = " you picked Dark mode";
                } 
-              }                  
+               if (document.getElementById("System").checked){
+                   modeOutput.innerText = " you picked System mode";
+               }
+              }
+                              
                
-           });
 // TODO Find which radio button is checked and display it.
-               // Challenge: Include whether the user subscribed or not.
               // If the light mode is clicked display light
               // If the dark mode is clicked display dark
              //  If system is clicked display system
