@@ -1,29 +1,40 @@
-**+-*<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
-     <p id="balloon">🎈</p>
+  <p id="balloon">🎈</p>
 
 <script>
-   document.body.style.overflow = 'hidden';
-   let ballonEl = document.getElementById("ballon");
-   let fontsize = 12;
-
-   function keyDownEvent(event){
+  let balloon = document.getElementById('balloon');
+  let fontsize = 20;
+  window.addEventListener('keydown',mykeydown);
+  function mykeydown(event){
     if (event.key == "ArrowUp"){
-      fontsize *= 1.1;
-      ballonEl.style.fontsize = fontsize + "px";  
       event.preventDefault();
-      if (fontsize >= 50) {
-        ballo0n
+      fontsize *= 1.1;
+      balloon.style.fontSize = fontsize + 'px';
+      console.log("up "+ fontsize);
+      if (fontsize > 50){
+        balloon.textContent = '💥';
+        window.removeEventListener('keydown',mykeydown);
       }
-    }
-   }
+      }
+    if (event.key == "ArrowDown") {
+      event.preventDefault();
+      fontsize *= 0.9;
+      balloon.style.fontSize = fontsize + 'px';
+      console.log("down " + fontsize);
+      }
+    balloon.style.fontSize = fontsize + 'px';
+  }
 </script>
-   
+
 </body>
+
 </html>
