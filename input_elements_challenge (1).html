@@ -64,7 +64,7 @@
 
     <section id="part3">
         <h2>Part 3: Checkbox and Radio Buttons</h2>
-        <label><input type="checkbox" id="subscribeBox"> Subscribe to newsletter</label>
+        <label><input type="checkbox" id="subscribeBox" onclick="mysubscribe()"> Subscribe to newsletter</label>
 
         <p>Pick a mode:</p>
         <label><input type="radio" name="mode"  id="Light" value="Light"> Light</label>
@@ -76,7 +76,7 @@
         <button id="btnSubmit">Submit</button>
         <div class="output" id="modeOutput"></div>
     </section>
-
+    
     <script>
         // --- PART 1 ---
         const nameInput = document.getElementById("nameInput");
@@ -113,6 +113,13 @@
        const btnSubmit = document.getElementById("btnSubmit");
        const modeOutput = document.getElementById("modeOutput");
 
+ function mysubscribe(){
+        let subscribeBox = document.getElementById("subscribeBox");
+        if (subscribeBox.checked){
+        alert("You have subscribed to the newsletter!");
+        }
+    }
+
 
        btnSubmit.addEventListener("click", () => {
            if (boolean == true){
@@ -125,7 +132,7 @@
               }                  
                
            });
-// TODO: Find which radio button is checked and display it.
+// TODO Find which radio button is checked and display it.
                // Challenge: Include whether the user subscribed or not.
               // If the light mode is clicked display light
               // If the dark mode is clicked display dark
