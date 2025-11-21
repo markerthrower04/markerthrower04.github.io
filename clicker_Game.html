@@ -1,12 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Clicker Game with Costs</title>
+  <style>
+body {
+    background-color: #1600df;
+}
+button{
+    background-color: #0595a8;
+    color: rgb(255, 255, 255);
+    border: 5px solid #fdfcfc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px;
+    color: #fdfcfc;
+    }
+    button { margin: 10px; padding: 10px 20px; }
+    #error { color: red; }
+  </style>
 </head>
 <body>
-    <button id="clicker">Click me!</button>
+  <h1>Clicker Game</h1>
+  
+  <!-- Display Points -->
+  <p id="points">Points: 0</p>
+  <p id="error"></p>
+  
+  <!-- Click Button -->
+  <button id="clicker">Click Me!</button>
+  
+  <!-- Upgrade Options -->
+  <div>
+    <label for="Upgrades">Choose Upgrade:</label>
+    <select id="Upgrades">
+      <option value="double">Double Points (Cost: 20)</option>
+      <option value="triple">Triple Points (Cost: 50)</option>
+    </select>
     
+    <label for="multiplier">Multiplier:</label>
+    <input type="number" id="multiplier" value="2" min="1">
+    
+    <button id="buyUpgrade">Buy Upgrade</button>
+  </div>
+  <div>
+    <button id="reset" onclick="myreset()">Reset</button>
+  </div>
+  <script>
+    // Variables
+    let points = 0;
+    let pointsPerClick = 1;
+    
+
+    function myreset() {
+        points = 0;
+        pointsPerClick = 1;
+        pointsDisplay.textContent = "Points: " + points;
+        errorDisplay.textContent = "";
+    }
+
+    // Upgrade costs
+    const upgradeCosts = {
+      double: 20,
+      triple: 50
+    };
+
+    // DOM Elements
+    const pointsDisplay = document.getElementById("points");
+    const errorDisplay = document.getElementById("error");
+    const clickButton = document.getElementById("clicker");
+    const upgradeDropdown = document.getElementById("Upgrades");
+    const multiplierInput = document.getElementById("multiplier");
+    const buyUpgradeButton = document.getElementById("buyUpgrade");
+
+    // Function: Increase Points
+    function addPoints() {
+      points += pointsPerClick;
+      pointsDisplay.textContent = "Points: " + points;
+    }
+
+    // Function: Buy Upgrade
+    function buyUpgrade() {
+      const upgradeType = upgradeDropdown.value;
+      const multiplier = parseInt(multiplierInput.value);
+
+      if (Number.isNaN(multiplier) || multiplier <= 0) {
+        errorDisplay.textContent = "Please enter a valid multiplier!";
+        return;
+      }
+
+      const cost = upgradeCosts[upgradeType];
+
+      if (points < cost) {
+        errorDisplay.textContent = "Not enough points! You need " + cost + ".";
+        return;
+      }
+
+      // Deduct cost
+      points -= cost;
+
+      // Apply upgrade
+      if (upgradeType === "double") {
+        pointsPerClick *= multiplier;
+      } else if (upgradeType === "triple") {
+        pointsPerClick *= multiplier + 1;
+      }
+
+      errorDisplay.textContent = ""; // Clear error
+      pointsDisplay.textContent = "Points: " + points + " (+" + pointsPerClick + " per click)";
+    }
+
+    // Event Listeners
+    clickButton.addEventListener("click", addPoints);
+    buyUpgradeButton.addEventListener("click", buyUpgrade);
+  </script>
 </body>
 </html>
