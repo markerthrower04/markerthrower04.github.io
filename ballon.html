@@ -5,8 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+  body {
+    background-color: #3ac048;
+}
+  </style>
 </head>
-
 <body>
   <p id="balloon">🎈</p>
 
@@ -20,7 +24,7 @@
       fontsize *= 1.1;
       balloon.style.fontSize = fontsize + 'px';
       console.log("up "+ fontsize);
-      if (fontsize > 50){
+      if (fontsize > 200){
         balloon.textContent = '💥';
         window.removeEventListener('keydown',mykeydown);
       }
