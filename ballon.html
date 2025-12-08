@@ -9,6 +9,7 @@
     body {
       background-color: #3ac048;
       color: #2f1600;
+      text-align: center;
     }
  
     h1{
@@ -26,6 +27,18 @@
       font-size: 20px;
       text-align: center;
     }
+
+    button{
+    background-color: #84ab63;
+    color: #2f1600;
+    --secondary: #2f1600;
+    border: 5px solid #2f1600;
+    border-radius: 500px;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    font-size: large;
+    }
   </style>
 
 </head>
@@ -33,6 +46,13 @@
  <a href="index.html">Home page</a>
   
   <h1>Balloon Game</h1>
+  <p>Use the Up and Down arrow keys to change the balloon's size. If it gets too big, it will pop!</p>
+  <p>To start over just press the "Reset" button!</p>
+
+  <div>
+    <button id="reset" onclick="myreset()">Reset</button>
+  </div>
+
   <p id="balloon">🎈</p>
 
 <script>
@@ -57,6 +77,12 @@
       console.log("down " + fontsize);
       }
     balloon.style.fontSize = fontsize + 'px';
+  }
+  function myreset(){
+    fontsize = 20;
+    balloon.style.fontSize = fontsize + 'px';
+    balloon.textContent = '🎈';
+    window.addEventListener('keydown',mykeydown);
   }
 </script>
 
