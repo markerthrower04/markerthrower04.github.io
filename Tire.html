@@ -45,15 +45,15 @@
 <body>
  <a href="index.html">Home page</a>
   
-  <h1>Balloon Game</h1>
-  <p>Use the Up and Down arrow keys to change the balloon's size. If it gets too big, it will pop!</p>
+  <h1>Tire Game</h1>
+  <p>Use the Up and Down arrow keys to change the tires size. If it gets too big, it will pop!</p>
   <p>To start over just press the "Reset" button!</p>
 
   <div>
     <button id="reset" onclick="myreset()">Reset</button>
   </div>
 
-  <p id="balloon">🎈</p>
+  <p id="balloon">🛞</p>
 
 <script>
   let balloon = document.getElementById('balloon');
@@ -81,7 +81,7 @@
   function myreset(){
     fontsize = 20;
     balloon.style.fontSize = fontsize + 'px';
-    balloon.textContent = '🎈';
+    balloon.textContent = '🛞';
     window.addEventListener('keydown',mykeydown);
   }
 </script>
