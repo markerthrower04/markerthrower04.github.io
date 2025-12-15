@@ -7,7 +7,7 @@ html {
 }
 
 li {
-    border: 1.5px solid #c5a77a
+    text-decoration: underline #c5a77a;
 }
 
 body {
@@ -24,7 +24,18 @@ h1 {
     font-size: xxx-large;
     font-weight: 620;
     font-style: oblique;
-    text-decoration: underline overline #c5a77a;
+    text-align: center;
+    font-size: 38px;
+    border: 5px solid #2f1600;
+    border-radius: 5000px;
+    width: 675px;
+    padding: 3px;
+    background-color: #84ab63;
+}
+
+h4{
+    text-align: center;
+    margin-top: 20px;
 }
 
 
@@ -44,6 +55,7 @@ h3 {
 li::marker {
     color: var(--secondary);
     margin-top: 5px;
+    text-decoration: underline #c5a77a;
 }
 
 p {
@@ -59,13 +71,53 @@ img {
     border: 7px solid var(--secondary);
     border-radius: 1000px;
     background: var(--accent)
-
-
 }
 *{
     width:900px;
-    border: 1px solid #c5a77a;
+
 }
+
+a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: large;
+    padding: 5px;
+    
+    background-color: #84ab63;
+    border-radius: 1000px;
+    text-align: center;
+}
+audio{
+    text-align: center;
+}
+
+.main-nav {
+  background-color: #84ab63;
+  padding: 15px 20px;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 100px;
+}
+
+.main-nav a {
+  color: #2f1600;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.main-nav a:hover {
+  background-color: var(--background);
+}
+
+.main-nav a:active,
+.main-nav a.active {
+  background-color: #1abc9c;
+}
+
 
 
 

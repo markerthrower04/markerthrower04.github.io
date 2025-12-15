@@ -4,27 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>class links</title>    
-    <link rel="stylesheet" herf="style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Quicksand:wght@300..700&display=swap"
         rel="stylesheet">
-      <style>
+    <style>
+       
         body {
-    background-color: #3ac048;
-        }
-        a {
+             background-color: #3ac048;
+            font-family: "Quicksand";
+            font-weight: 520;
+            font-size: large;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            }
+            h1{
+              width: 350px;
+            }
+        a{
+
             background-color: #84ab63;
-    border: 5px solid #2f1600;
             color: #2f1600;
+            border-radius: 1000px;
+            text-align: center;
         }  
+        button {
+            background-color: #84ab63;
+            color: #2f1600;
+            border-radius: 1000px;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: large;
+            font-family: "Quicksand";
+            font-weight: 520;
+           cursor: pointer;
+            width: 200px;
+            border: none;
+        }  
+        h2{
+            border: #2f1600 5px solid;
+            width: 215px;
+            background-color: #84ab63;
+            border-radius: 1000px;
+            padding: 5px;
+            text-align: center;
+        }
+    .main-nav {
+  background-color: #84ab63;
+  padding: 15px 20px;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  justify-content: center;
+width: fit-content;
+  margin: 0 auto;
+}
+
+.main-nav a {
+  color: #2f1600;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.main-nav a:hover {
+  background-color: var(--background);
+}
+
+.main-nav a:active,
+.main-nav a.active {
+  background-color: #1abc9c;
+}
     </style>
 </head>
 <body>
+    <nav class="main-nav" >
     <a href="index.html">Home page</a>
-    <a href="https://LoganMacEachern29.github.io"> logans web page</a>
-    <h1>Class links</h1>
-    <p>⬆️ Above is logans website ⬆️</p>
+      <a href="bikes_type.html">Types of Mountian Bikes</a>
+    <a href="Tire.html">Tire Game</a>
+    <a href="clicker_Game.html">Clicker Game</a>
+    <a href="input_elements_challenge.html">Input Elements Challenge</a>
+   </nav>
+    
+    <h1>Class Links</h1>
+    <p>⬇️ Below is Logans website ⬇️</p>
+   <h2>
+     <button onclick="window.location.href='https://LoganMacEachern29.github.io'">Logans website</button>
+    </h2>
 </body>
 </html>

@@ -4,14 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400..800&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
     <title>Input Element Challenge</title>
     <style>
-        body {
+     html {
+    --text: #0a170c;
+    --background: #3ac048;
+    --primary: #84ab63;
+    --secondary: #2f1600;
+    --accent: #c5a77a;
+}       
+
+       body {
             background-color: #3ac048;
             color: #2f1600;
-            font-family: sans-serif;
-            max-width: 600px;
+            font-family: "Quicksand";
+            font-weight: 520;
+            font-size: medium;
             margin: 2rem auto;
+            max-width: 600px;
         }
 
         h1{
@@ -40,11 +55,47 @@
             margin-top: 1rem;
             font-weight: bold;
         }
+
+        .main-nav {
+  background-color: #84ab63;
+  padding: 15px 20px;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: fit-content;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.main-nav a {
+  color: #2f1600;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.main-nav a:hover {
+  background-color: var(--background);
+}
+
+.main-nav a:active,
+.main-nav a.active {
+  background-color: #1abc9c;
+}
     </style>
 </head>
 
 <body>
-      <a href="index.html">Home page</a>
+    <nav class="main-nav" >
+        <a href="index.html">Home page</a>
+        <a href="bikes_type.html">Types of Mountian Bikes</a>
+        <a href="class_links.html">Class Links</a>
+        <a href="Tire.html">Tire Game</a>
+        <a href="clicker_Game.html">Clicker Game</a>
+    </nav>
+
+    <h2/>
     <h1>Input Element Challenge</h1>
 
     <section id="part1">
@@ -84,7 +135,7 @@
 
         <label><input type="radio" name="mode"  id="Dark"  value="Dark"> Dark</label>
 
-        <label><input type="radio" name="mode"   id="System" value="System" checked> System</label>
+        <label><input type="radio" name="mode"   id="System" value="System" checked> System (normal background)</label>
 
         <button id="btnSubmit" onclick="mysubmit()">Submit</button>
         <div class="output" id="modeOutput"></div>
@@ -140,12 +191,17 @@
          function mysubmit(){
                if (document.getElementById("Light").checked){
                    modeOutput.innerText = " you picked Light mode";
+                   document.body.style.backgroundColor = "#07ed17";
                } 
                 if (document.getElementById("Dark").checked){
                    modeOutput.innerText = " you picked Dark mode";
+                   document.body.style.backgroundColor = "#006106";
+                     
                } 
                if (document.getElementById("System").checked){
                    modeOutput.innerText = " you picked System mode";
+                     document.body.style.backgroundColor = "#3ac048";
+                   
                }
               }
                               
