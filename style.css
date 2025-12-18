@@ -72,10 +72,6 @@ img {
     border-radius: 1000px;
     background: var(--accent)
 }
-*{
-    width:900px;
-
-}
 
 a {
     text-decoration: none;
