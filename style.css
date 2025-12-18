@@ -100,6 +100,7 @@ audio{
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     margin: 0 auto;
     justify-content: center;
+    width: 900px;
    }
 
 .main-nav a {
@@ -108,6 +109,8 @@ audio{
   padding: 8px 15px;
   border-radius: 4px;
   transition: background-color 0.3s;
+  justify-content: center;
+  
 }
 
 .main-nav a:hover {
